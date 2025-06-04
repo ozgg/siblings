@@ -15,3 +15,8 @@ AllCops:
 Metrics/MethodLength:
   CountAsOne: ['heredoc']
 
+RSpecRails/InferredSpecType:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
