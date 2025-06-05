@@ -7,6 +7,8 @@ RSpec.describe Sibling, type: :model do
     create(:sibling)
   end
 
+  it { is_expected.to have_many(:posts) }
+
   describe 'validation' do
     it { is_expected.to validate_presence_of(:birthday) }
     it { is_expected.to validate_presence_of(:name) }

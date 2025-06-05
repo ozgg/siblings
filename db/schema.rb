@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_06_04_112017) do
+ActiveRecord::Schema[8.0].define(version: 2025_06_05_120338) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -42,6 +42,17 @@ ActiveRecord::Schema[8.0].define(version: 2025_06_04_112017) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "posts", comment: "Post in diary", force: :cascade do |t|
+    t.bigint "sibling_id", null: false
+    t.date "date", null: false
+    t.string "title", default: "", null: false
+    t.text "body", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["date", "sibling_id"], name: "index_posts_on_date_and_sibling_id", unique: true
+    t.index ["sibling_id"], name: "index_posts_on_sibling_id"
+  end
+
   create_table "sessions", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.inet "ip_address"
@@ -67,5 +78,6 @@ ActiveRecord::Schema[8.0].define(version: 2025_06_04_112017) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "posts", "siblings", on_update: :cascade, on_delete: :cascade
   add_foreign_key "sessions", "users", on_update: :cascade, on_delete: :cascade
 end

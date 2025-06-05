@@ -6,6 +6,8 @@
 #   birthday [Date]
 #   name [String]
 class Sibling < ApplicationRecord
+  has_many :posts, dependent: :destroy
+
   validates :birthday, presence: true
   validates :name,
             presence: true,
