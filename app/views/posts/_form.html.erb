@@ -11,25 +11,34 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :sibling_id, style: "display: block" %>
-    <%= form.text_field :sibling_id %>
-  </div>
+  <dl>
+    <div>
+      <dt><%= form.label :sibling_id %></dt>
+      <dd>
+        <%= form.collection_select :sibling_id, Sibling.all, :id, :name %>
+      </dd>
+    </div>
 
-  <div>
-    <%= form.label :date, style: "display: block" %>
-    <%= form.date_field :date %>
-  </div>
+    <div>
+      <dt><%= form.label :image %></dt>
+      <dd><%= form.file_field :image, accept: "image/*" %></dd>
+    </div>
 
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
-  </div>
+    <div>
+      <dt><%= form.label :date %></dt>
+      <dd><%= form.date_field :date %></dd>
+    </div>
 
-  <div>
-    <%= form.label :body, style: "display: block" %>
-    <%= form.textarea :body %>
-  </div>
+    <div>
+      <dt><%= form.label :title %></dt>
+      <dd><%= form.text_field :title %></dd>
+    </div>
+
+    <div>
+      <dt><%= form.label :body %></dt>
+      <dd><%= form.textarea :body %></dd>
+    </div>
+  </dl>
 
   <div>
     <%= form.submit %>

@@ -1,4 +1,10 @@
 <div id="<%= dom_id post %>">
+  <figure class="item-card">
+    <div class="image">
+      <%= link_to(post_image_small(post), post) %>
+    </div>
+  </figure>
+
   <p>
     <strong>Sibling:</strong>
     <%= post.sibling_id %>
