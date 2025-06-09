@@ -5,7 +5,7 @@ class PostsController < ApplicationController
 
   # GET /posts or /posts.json
   def index
-    @posts = Post.all
+    @posts = Post.list(current_page)
   end
 
   # GET /posts/1 or /posts/1.json
@@ -66,6 +66,6 @@ class PostsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def post_params
-    params.expect(post: %i[sibling_id date title body image])
+    params.expect(post: Post.permitted_params)
   end
 end
