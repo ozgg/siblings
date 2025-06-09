@@ -1,0 +1,19 @@
+ru:
+  activerecord:
+    models:
+      sibling: "Сиблинг"
+      post: "Публикация"
+    attributes:
+      post:
+        body: "Текст"
+        date: "Дата"
+        image: "Картинка"
+        sibling_id: "Сиблинг"
+        title: "Заголовок"
+  posts:
+    index:
+      title: "Публикации, страница %{page}"
+      heading: "Публикации"
+    new:
+      title: "Добавить публикацию"
+      heading: "Новая публикация"

@@ -1,28 +1,33 @@
 <div id="<%= dom_id post %>">
-  <figure class="item-card">
-    <div class="image">
-      <%= link_to(post_image_small(post), post) %>
-    </div>
-  </figure>
+  <% if post.image.attached? %>
+    <figure class="item-card">
+      <div class="image">
+        <%= link_to(post_image_small(post), post) %>
+      </div>
+    </figure>
+  <% end %>
 
   <p>
     <strong>Sibling:</strong>
-    <%= post.sibling_id %>
+    <%= post.sibling.name %>
   </p>
 
   <p>
     <strong>Date:</strong>
     <%= post.date %>
+    (<%= l(post.date, format: '%A') %>)
   </p>
 
-  <p>
-    <strong>Title:</strong>
-    <%= post.title %>
-  </p>
+  <% unless post.title.blank? %>
+    <p>
+      <strong>Title:</strong>
+      <%= post.title %>
+    </p>
+  <% end %>
 
   <p>
     <strong>Body:</strong>
-    <%= post.body %>
+    <%= simple_format(post.body) %>
   </p>
 
 </div>

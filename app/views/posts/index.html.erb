@@ -1,8 +1,8 @@
 <p style="color: green"><%= notice %></p>
 
-<% content_for :title, "Posts" %>
+<% content_for :title, t('.title', page: current_page) %>
 
-<h1>Posts</h1>
+<h1><%= t('.heading') %></h1>
 
 <div id="posts">
   <% @posts.each do |post| %>
@@ -15,4 +15,4 @@
 
 <%= paginate @posts %>
 
-<%= link_to "New post", new_post_path %>
+<%= link_to t('posts.new.title'), new_post_path %>

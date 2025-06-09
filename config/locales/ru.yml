@@ -1,13 +1,2 @@
 ru:
-  activerecord:
-    models:
-      sibling: "Сиблинг"
-      post: "Публикация"
-    attributes:
-      post:
-        body: "Текст"
-        date: "Дата"
-        image: "Картинка"
-        sibling_id: "Сиблинг"
-        title: "Заголовок"
   copyright: "2020–2025 Maxim Khan-Magomedov"
