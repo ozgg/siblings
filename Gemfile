@@ -26,7 +26,7 @@ group :development, :test do
   gem 'brakeman', require: false
   gem 'database_cleaner', '~> 2.1'
   gem 'debug', platforms: %i[mri windows], require: 'debug/prelude'
-  gem 'factory_bot_rails', '~> 6.4'
+  gem 'factory_bot_rails', '~> 6.5'
   gem 'pry', '~> 0.15.2'
   gem 'pry-byebug', '~> 3.11'
   gem 'rspec-rails', '~> 8.0'
