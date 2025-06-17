@@ -30,7 +30,7 @@ group :development, :test do
   gem 'pry', '~> 0.15.2'
   gem 'pry-byebug', '~> 3.11'
   gem 'rspec-rails', '~> 8.0'
-  gem 'rubocop', '~> 1.75'
+  gem 'rubocop', '~> 1.76'
   gem 'rubocop-factory_bot', '~> 2.27'
   gem 'rubocop-performance', '~> 1.25'
   gem 'rubocop-rails', '~> 2.32'
