@@ -9,3 +9,28 @@
 
   Sibling.create!(name: data[0], birthday: data[1])
 end
+
+pavel = Sibling.find_by(name: 'Паша')
+dir = Rails.root.join('tmp/import/siblings/1/diary').to_s
+if Dir.exist?(dir)
+  Rails.logger.debug { 'Seeding diary for Pavel' }
+  Dir.glob("#{dir}/*").map { |d| File.basename(d) }.map(&:to_i).sort.each do |part|
+    pwd = "#{dir}/#{part}"
+
+    Dir.glob("#{pwd}/*.yml").map { |f| File.basename(f) }.map(&:to_i).each do |id|
+      File.open("#{pwd}/#{id}.yml", 'r') do |file|
+        YAML.load(file, permitted_classes: [Date]).each do |date, data|
+          image = data['image']
+          post = Post.find_or_initialize_by(sibling: pavel, date:)
+          post.title = data['title'].to_s
+          post.body = data['body']
+          post.image.attach(io: File.open("#{pwd}/#{image}"), filename: image) if image.present?
+          post.save!
+          Rails.logger.debug { "Saved post #{post.date}" }
+        end
+      end
+    end
+  end
+else
+  Rails.logger.warn { "Cannot find sibling import dir: #{dir}" }
+end
