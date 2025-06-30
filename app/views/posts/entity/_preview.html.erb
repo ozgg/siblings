@@ -1,0 +1,23 @@
+<article class="post-preview">
+  <hgroup>
+    <h2><%= entity.title_for_page %></h2>
+    <% unless entity.title.blank? %>
+      <h3><%= entity.title %></h3>
+    <% end %>
+    <p><%= l(entity.date, format: '%A') %></p>
+  </hgroup>
+
+  <% if entity.image.attached? %>
+    <figure class="item-card">
+      <div class="image">
+        <%= link_to(post_image_small(entity), entity) %>
+      </div>
+    </figure>
+  <% end %>
+
+  <div class="post-body">
+    <%= simple_format(entity.preview) %>
+  </div>
+
+  <p><%= link_to(t(:read_all), entity) %></p>
+</article>

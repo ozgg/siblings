@@ -1,4 +1,12 @@
-<div id="<%= dom_id post %>">
+<article id="<%= dom_id post %>" class="post">
+  <hgroup>
+    <h1><%= post.title_for_page %></h1>
+    <% unless post.title.blank? %>
+      <h2><%= post.title %></h2>
+    <% end %>
+    <p><%= l(post.date, format: '%A') %></p>
+  </hgroup>
+
   <% if post.image.attached? %>
     <figure class="item-card">
       <div class="image">
@@ -7,27 +15,7 @@
     </figure>
   <% end %>
 
-  <p>
-    <strong>Sibling:</strong>
-    <%= post.sibling.name %>
-  </p>
-
-  <p>
-    <strong>Date:</strong>
-    <%= post.date %>
-    (<%= l(post.date, format: '%A') %>)
-  </p>
-
-  <% unless post.title.blank? %>
-    <p>
-      <strong>Title:</strong>
-      <%= post.title %>
-    </p>
-  <% end %>
-
-  <p>
-    <strong>Body:</strong>
-    <%= simple_format(post.body) %>
-  </p>
-
-</div>
+  <div class="post-body">
+    <%= simple_format(post.body_for_page) %>
+  </div>
+</article>

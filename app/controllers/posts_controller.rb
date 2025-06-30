@@ -5,7 +5,7 @@ class PostsController < ApplicationController
 
   # GET /posts or /posts.json
   def index
-    @posts = Post.list(current_page)
+    @collection = Post.list(current_page)
   end
 
   # GET /posts/1 or /posts/1.json

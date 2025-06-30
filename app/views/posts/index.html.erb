@@ -1,18 +1,20 @@
-<p style="color: green"><%= notice %></p>
-
 <% content_for :title, t('.title', page: current_page) %>
+<% content_for :breadcrumbs do %>
+  <span><%= t('.nav_text') %></span>
+<% end %>
 
-<h1><%= t('.heading') %></h1>
+<section class="posts-index">
+  <h1><%= t('.heading') %></h1>
 
-<div id="posts">
-  <% @posts.each do |post| %>
-    <%= render post %>
-    <p>
-      <%= link_to "Show this post", post %>
-    </p>
-  <% end %>
-</div>
+  <%= paginate @collection %>
 
-<%= paginate @posts %>
+  <div class="collection">
+    <% @collection.each do |entity| %>
+      <%= render partial: 'posts/entity/preview', locals: { entity: } %>
+    <% end %>
+  </div>
 
-<%= link_to t('posts.new.title'), new_post_path %>
+  <%= paginate @collection %>
+
+  <%= link_to t('posts.new.title'), new_post_path %>
+</section>

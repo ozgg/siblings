@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --text-color-primary: #000;
+    --font-family-heading: "Cormorant Garamond", serif;
+    --font-family-main: "Roboto", sans-serif;
+    --font-size-normal: 1rem;
+    --font-size-increased: 1.25rem;
+    --font-size-large: 1.5rem;
+    --content-width-min: 20rem;
+    --content-width: 80rem;
+    --link-color: hsl(250deg 50% 50%);
+    --link-color-hover: hsl(0deg 50% 50%);
+    --link-color-active: hsl(15deg 75% 50%);
+    --spacer-xxs: .25rem;
+    --spacer-xs: .5rem;
+    --spacer-s: .75rem;
+    --spacer-m: 1rem;
+    --border-primary: .0625rem solid #333;
+}

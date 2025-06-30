@@ -1,0 +1,93 @@
+*,
+::after,
+::before {
+    box-sizing: border-box;
+}
+
+html {
+    color: var(--text-color-primary);
+    font-family: var(--font-family-main);
+    font-optical-sizing: auto;
+    font-variation-settings: "wdth" 100;
+    margin: 0;
+    padding: 0;
+    -webkit-text-size-adjust: none;
+    -moz-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+}
+
+body {
+    font-size: var(--font-size-normal);
+    margin: 0 auto;
+    max-width: var(--content-width);
+    min-width: var(--content-width-min);
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-family-heading);
+    margin: 0;
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+    transition: color .125s;
+}
+a:hover {
+    color: var(--link-color-hover);
+    text-decoration: underline;
+}
+
+a:active {
+    color: var(--link-color-active);
+}
+
+figure {
+    margin: 0;
+}
+
+article {
+    position: relative;
+}
+
+button,
+input,
+textarea {
+    font-size: inherit;
+}
+
+.content-wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: var(--content-width);
+}
+
+.hidden,
+[hidden] {
+    display: none !important;
+}
+
+.visually-hidden {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: auto;
+    left: -10000rem;
+    margin: 0;
+    opacity: .05;
+    overflow: hidden;
+    padding: 0;
+    pointer-events: none;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+main {
+    padding: var(--spacer-xxs);
+}

@@ -35,4 +35,20 @@ class Post < ApplicationRecord
   def self.permitted_params
     %i[body date image sibling_id title]
   end
+
+  def title_for_page
+    "#{sibling.name} #{I18n.l(date)}"
+  end
+
+  def passages
+    body.split(/(\r\n)+/)
+  end
+
+  def body_for_page
+    passages.join("\n\n")
+  end
+
+  def preview
+    passages.first(2).join("\n\n")
+  end
 end

@@ -1,4 +1,8 @@
-<p style="color: green"><%= notice %></p>
+<%= content_for :title, @post.title_for_page %>
+<% content_for :breadcrumbs do %>
+  <%= link_to(t('posts.index.nav_text'), posts_path) %>
+  <span><%= @post.title_for_page %></span>
+<% end %>
 
 <%= render @post %>
 
