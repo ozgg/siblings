@@ -12,5 +12,6 @@
 @import url('/application/layout.css');
 @import url('/components/pagination.css');
 @import url('/components/breadcrumbs.css');
+@import url('/components/posts.css');
 
 /** { outline: solid red 1px }*/

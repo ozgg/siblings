@@ -41,7 +41,7 @@ class Post < ApplicationRecord
   end
 
   def passages
-    body.split(/(\r\n)+/)
+    body.split(/(?:\r?\n)+/)
   end
 
   def body_for_page
@@ -50,5 +50,9 @@ class Post < ApplicationRecord
 
   def preview
     passages.first(2).join("\n\n")
+  end
+
+  def read_more_text(words = 7)
+    passages[2].to_s.split(/\s+/).first(words).join(' ')
   end
 end

@@ -31,6 +31,7 @@ h4,
 h5,
 h6 {
     font-family: var(--font-family-heading);
+    font-weight: 500;
     margin: 0;
 }
 
@@ -90,4 +91,8 @@ textarea {
 
 main {
     padding: var(--spacer-xxs);
+}
+
+h1 {
+    font-size: var(--font-size-xxl);
 }

@@ -7,17 +7,18 @@
     <p><%= l(entity.date, format: '%A') %></p>
   </hgroup>
 
-  <% if entity.image.attached? %>
-    <figure class="item-card">
-      <div class="image">
-        <%= link_to(post_image_small(entity), entity) %>
-      </div>
-    </figure>
-  <% end %>
+  <figure>
+    <div class="image">
+      <% if entity.image.attached? %>
+        <%= post_image_small(entity) %>
+      <% else %>
+        <%= image_tag('posts/placeholder.svg', alt: '') %>
+      <% end %>
+    </div>
+  </figure>
 
   <div class="post-body">
     <%= simple_format(entity.preview) %>
+    <p><%= link_to(entity.read_more_text, entity) %> &hellip;</p>
   </div>
-
-  <p><%= link_to(t(:read_all), entity) %></p>
 </article>
