@@ -1,0 +1,11 @@
+.breadcrumbs a {
+    background: url('/icons/breadcrumb.svg') no-repeat bottom .125rem right / .375rem .75rem;
+    padding-right: 1rem;
+    transition: background .25s;
+}
+
+.breadcrumbs a:active,
+.breadcrumbs a:focus,
+.breadcrumbs a:hover {
+    background-image: url('/icons/breadcrumb-hover.svg');
+}

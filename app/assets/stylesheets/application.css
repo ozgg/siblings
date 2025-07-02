@@ -10,5 +10,7 @@
  */
 @import url('/vars.css');
 @import url('/application/layout.css');
+@import url('/components/pagination.css');
+@import url('/components/breadcrumbs.css');
 
 /** { outline: solid red 1px }*/
