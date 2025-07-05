@@ -21,4 +21,9 @@
     <%= simple_format(entity.preview) %>
     <p><%= link_to(entity.read_more_text, entity) %> &hellip;</p>
   </div>
+
+  <div class="entity-actions">
+    <%= gear_icon(post_path(entity)) %>
+    <%= edit_icon(edit_post_path(entity)) %>
+  </div>
 </article>

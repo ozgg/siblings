@@ -9,3 +9,7 @@ ru:
       previous: "←"
       next: "→"
       truncate: "…"
+  create: "Создать"
+  edit: "Редактировать"
+  view_as_visitor: "Публичная версия"
+  view_settings: "Управление"

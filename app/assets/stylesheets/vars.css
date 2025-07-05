@@ -5,6 +5,7 @@
     --text-color-secondary: #777;
     --font-family-heading: "Source Serif 4", serif;
     --font-family-main: "Roboto", sans-serif;
+    --font-size-decreased: .75rem;
     --font-size-normal: 1rem;
     --font-size-increased: 1.25rem;
     --font-size-large: 1.5rem;
@@ -21,6 +22,7 @@
     --spacer-m: 1rem;
     --spacer-l: 1.5rem;
     --spacer-xl: 3rem;
+    --block-shadow: .125rem .125rem .25rem .125rem rgba(0, 0, 0, .125);
     --border-primary: .0625rem solid #333;
     --border-secondary: .0625rem solid #777;
 }

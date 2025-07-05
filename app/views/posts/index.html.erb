@@ -6,6 +6,10 @@
 <section class="posts-index">
   <h1><%= t('.heading') %></h1>
 
+  <div class="entity-actions">
+    <%= create_icon(new_post_path) %>
+  </div>
+
   <%= paginate @collection %>
 
   <div class="collection">
@@ -15,6 +19,4 @@
   </div>
 
   <%= paginate @collection %>
-
-  <%= link_to t('posts.new.title'), new_post_path %>
 </section>

@@ -2,7 +2,7 @@ ru:
   activerecord:
     models:
       sibling: "Сиблинг"
-      post: "Публикация"
+      post: "Запись в дневнике"
     attributes:
       post:
         body: "Текст"
@@ -12,9 +12,9 @@ ru:
         title: "Заголовок"
   posts:
     index:
-      title: "Публикации, страница %{page}"
-      heading: "Публикации"
+      title: "Записи в дневнике, страница %{page}"
+      heading: "Записи в дневнике"
       nav_text: "Дневник"
     new:
-      title: "Добавить публикацию"
-      heading: "Новая публикация"
+      title: "Добавить запись"
+      heading: "Новая запись"

@@ -96,3 +96,58 @@ main {
 h1 {
     font-size: var(--font-size-xxl);
 }
+
+article,
+section {
+    position: relative;
+}
+
+.entity-actions {
+    align-items: center;
+    background: #fff;
+    border-radius: .25rem;
+    box-shadow: var(--block-shadow);
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    margin: 0;
+    opacity: .5;
+    padding: 0;
+    position: absolute;
+    right: var(--spacer-xxs);
+    top: var(--spacer-xxs);
+    transition: .25s;
+}
+
+.entity-actions:hover {
+     opacity: 1;
+}
+
+.entity-actions .danger {
+    margin-left: var(--spacer-s);
+}
+
+.entity-actions a,
+.entity-actions button {
+    display: inline-block;
+    font-size: var(--font-size-decreased);
+    height: 1.5rem;
+    line-height: 1;
+    margin: 0;
+    padding: var(--spacer-xxs);
+    width: 1.5rem;
+}
+
+.entity-actions .destroy {
+    background: url('icons/destroy.svg') no-repeat center / 1rem auto;
+    border: none;
+    border-radius: .25rem;
+    box-shadow: 0 0 .125rem hsla(0, 75%, 75%, .75);
+    cursor: pointer;
+}
+
+.entity-actions img {
+    height: 100%;
+    object-fit: contain;
+    width: 100%;
+}
