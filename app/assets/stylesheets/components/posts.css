@@ -70,3 +70,25 @@ hgroup p:first-letter {
     font-weight: 300;
     text-indent: var(--spacer-l);
 }
+
+.post {
+    border-bottom: var(--border-primary);
+    margin-bottom: var(--spacer-m);
+    margin-top: var(--spacer-m);
+    max-width: 50rem;
+    padding-bottom: var(--spacer-xs);
+}
+
+.post .post-body {
+    padding: var(--spacer-xs);
+}
+
+.post hgroup {
+    border-bottom: var(--border-secondary);
+    margin-bottom: var(--spacer-xs);
+    padding-bottom: var(--spacer-xs);
+}
+
+.post .image img {
+    width: 100%;
+}

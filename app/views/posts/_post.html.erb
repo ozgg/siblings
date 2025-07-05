@@ -8,9 +8,9 @@
   </hgroup>
 
   <% if post.image.attached? %>
-    <figure class="item-card">
+    <figure>
       <div class="image">
-        <%= link_to(post_image_small(post), post) %>
+        <%= post_image_large(post) %>
       </div>
     </figure>
   <% end %>
