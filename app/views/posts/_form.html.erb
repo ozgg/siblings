@@ -1,42 +1,41 @@
 <%= form_with(model: post) do |form| %>
-  <% if post.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+  <%= render partial: 'shared/entity/list_of_errors', locals: { entity: post } %>
 
-      <ul>
-        <% post.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <dl>
+  <dl class="fields">
     <div>
       <dt><%= form.label :sibling_id %></dt>
       <dd>
-        <%= form.collection_select :sibling_id, Sibling.all, :id, :name %>
+        <%= form.collection_select :sibling_id, Sibling.all, :id, :name, {}, class: 'input-select' %>
       </dd>
     </div>
 
     <div>
       <dt><%= form.label :image %></dt>
-      <dd><%= form.file_field :image, accept: "image/*" %></dd>
+      <dd>
+        <% if post.image.attached? %>
+          <figure class="image-preview">
+            <%= post_image_small(post) %>
+          </figure>
+        <% end %>
+        <div>
+          <%= form.file_field :image, accept: "image/*" %>
+        </div>
+      </dd>
     </div>
 
     <div>
       <dt><%= form.label :date %></dt>
-      <dd><%= form.date_field :date %></dd>
+      <dd><%= form.date_field :date, class: 'input-text' %></dd>
     </div>
 
     <div>
       <dt><%= form.label :title %></dt>
-      <dd><%= form.text_field :title %></dd>
+      <dd><%= form.text_field :title, class: 'input-text' %></dd>
     </div>
 
     <div>
       <dt><%= form.label :body %></dt>
-      <dd><%= form.textarea :body %></dd>
+      <dd><%= form.textarea :body, class: 'input-text', rows: 25 %></dd>
     </div>
   </dl>
 

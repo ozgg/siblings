@@ -1,12 +1,12 @@
-<% content_for :title, "Editing post" %>
+<% content_for :title, t('.title') %>
+<% content_for :breadcrumbs do %>
+  <%= link_to(t('posts.index.nav_text'), posts_path) %>
+  <%= link_to(@post.title_for_page, @post) %>
+  <span><%= t('.nav_text') %></span>
+<% end %>
 
-<h1>Editing post</h1>
+<article>
+  <h1><%= t('.title') %></h1>
 
-<%= render "form", post: @post %>
-
-<br>
-
-<div>
-  <%= link_to "Show this post", @post %> |
-  <%= link_to "Back to posts", posts_path %>
-</div>
+  <%= render "form", post: @post %>
+</article>

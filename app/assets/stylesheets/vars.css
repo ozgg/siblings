@@ -25,4 +25,11 @@
     --block-shadow: .125rem .125rem .25rem .125rem rgba(0, 0, 0, .125);
     --border-primary: .0625rem solid #333;
     --border-secondary: .0625rem solid #777;
+    --form-control-color: hsl(220, 75%, 75%);
+    --form-field-error: #f00;
+    --form-input-bg: #fff;
+    --input-border: hsl(0, 0%, 75%);
+    --input-border-focus: hsl(0, 0%, 50%);
+    --input-border-invalid: hsl(0, 75%, 50%);
+    --input-border-invalid-focus: hsl(0, 50%, 50%);
 }
