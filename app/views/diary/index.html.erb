@@ -1,0 +1,14 @@
+<% content_for :title, t('.title', page: current_page) %>
+<% content_for :breadcrumbs do %>
+  <span><%= t('.nav_text') %></span>
+<% end %>
+
+<section>
+  <h1><%= t('.heading') %></h1>
+
+  <%= paginate @collection %>
+  <% @collection.each do |entity| %>
+    <%= render partial: 'diary/entry_preview', locals: { entity: } %>
+  <% end %>
+  <%= paginate @collection %>
+</section>

@@ -2,7 +2,6 @@
 
 # Common helpers
 module ApplicationHelper
-
   # @param [String|ApplicationRecord] path
   # @param [String] title
   # @param [Hash] options

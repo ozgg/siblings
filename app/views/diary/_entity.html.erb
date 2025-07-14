@@ -1,0 +1,21 @@
+<article class="post">
+  <hgroup>
+    <h2><%= entity.sibling.name %></h2>
+    <% unless entity.title.blank? %>
+      <h3><%= entity.title %></h3>
+    <% end %>
+    <p><%= l(entity.date, format: '%A') %></p>
+  </hgroup>
+
+  <% if entity.image.attached? %>
+    <figure>
+      <div class="image">
+        <%= post_image_large(entity) %>
+      </div>
+    </figure>
+  <% end %>
+
+  <div class="post-body">
+    <%= simple_format(entity.body_for_page) %>
+  </div>
+</article>

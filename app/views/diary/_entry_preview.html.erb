@@ -1,0 +1,24 @@
+<article class="post-preview">
+  <hgroup>
+    <h2><%= diary_entry_link(entity, entity.title_for_page) %></h2>
+    <% unless entity.title.blank? %>
+      <h3><%= entity.title %></h3>
+    <% end %>
+    <p><%= l(entity.date, format: '%A') %></p>
+  </hgroup>
+
+  <figure>
+    <div class="image">
+      <% if entity.image.attached? %>
+        <%= post_image_small(entity) %>
+      <% else %>
+        <%= image_tag('posts/placeholder.svg', alt: '') %>
+      <% end %>
+    </div>
+  </figure>
+
+  <div class="post-body">
+    <%= simple_format(entity.preview) %>
+    <p><%= diary_entry_link(entity, entity.read_more_text) %> &hellip;</p>
+  </div>
+</article>

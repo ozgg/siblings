@@ -6,6 +6,11 @@ Rails.application.routes.draw do
   resources :posts
   resource :session
 
+  scope :diary, controller: :diary do
+    get '/' => :index, as: :diary
+    get '/:date' => :show, as: :diary_entry, constraints: { date: /20\d\d-(0[1-9]|1[012])-(0[1-9]|[12]\d|3[01])/ }
+  end
+
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.
   get 'up' => 'rails/health#show', as: :rails_health_check

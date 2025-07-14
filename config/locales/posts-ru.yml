@@ -14,10 +14,18 @@ ru:
     index:
       title: "Записи в дневнике, страница %{page}"
       heading: "Записи в дневнике"
-      nav_text: "Дневник"
+      nav_text: "Записи"
     new:
       title: "Добавить запись"
       heading: "Новая запись"
     edit:
       title: "Редактирование записи"
       nav_text: "Редактировать"
+  diary:
+    index:
+      title: "Дневник, страница %{page}"
+      nav_text: "Дневник"
+      heading: "Дневник"
+    show:
+      title: "Дневник: %[date}"
+      heading: "Дневник: %{date}"

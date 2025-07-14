@@ -28,7 +28,9 @@
     font-size: var(--font-size-large);
 }
 
-.post-preview h3:first-letter {
+.post-preview h3:first-letter,
+hgroup h2:first-letter,
+hgroup h3:first-letter {
     text-transform: uppercase;
 }
 
@@ -91,4 +93,8 @@ hgroup p:first-letter {
 
 .post .image img {
     width: 100%;
+}
+
+hgroup a {
+    color: inherit;
 }
