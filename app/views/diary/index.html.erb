@@ -6,9 +6,9 @@
 <section>
   <h1><%= t('.heading') %></h1>
 
-  <%= paginate @collection %>
-  <% @collection.each do |entity| %>
-    <%= render partial: 'diary/entry_preview', locals: { entity: } %>
+  <%= paginate @collection[:dates] %>
+  <% @collection[:posts].each do |date, posts| %>
+    <%= render partial: 'diary/date', locals: { date:, posts: } %>
   <% end %>
-  <%= paginate @collection %>
+  <%= paginate @collection[:dates] %>
 </section>

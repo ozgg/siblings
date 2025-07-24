@@ -6,7 +6,7 @@ class DiaryController < ApplicationController
 
   # get /diary
   def index
-    @collection = Post.list(current_page)
+    @collection = DiaryService.list(current_page)
   end
 
   # get /diary/:date

@@ -1,0 +1,9 @@
+<section class="diary">
+  <hgroup>
+    <h2><%= l(date) %></h2>
+    <p><%= l(date, format: '%A') %></p>
+  </hgroup>
+  <% posts.each do |entity| %>
+    <%= render partial: 'diary/entry_preview', locals: { entity: } %>
+  <% end %>
+</section>
