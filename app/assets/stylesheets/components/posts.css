@@ -106,3 +106,25 @@ hgroup a {
     padding: 0;
     text-align: left;
 }
+
+.adjacent {
+    display: flex;
+}
+
+.adjacent .prev {
+    margin-right: auto;
+}
+
+.adjacent .prev::before {
+    content: '←';
+    padding-right: var(--spacer-xxs);
+}
+
+.adjacent .next {
+    margin-left: auto;
+}
+
+.adjacent .next::after {
+    content: '→';
+    padding-left: var(--spacer-xxs);
+}

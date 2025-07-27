@@ -16,4 +16,14 @@ class DiaryService
 
     { dates:, posts: }
   end
+
+  # Adjacent dates for entry
+  #
+  # @param [Date] current
+  def self.adjacent_dates(current)
+    {
+      prev: Post.order(date: :desc).where(date: ...current).maximum(:date),
+      next: Post.order(date: :asc).where('date > ?', current).minimum(:date)
+    }
+  end
 end

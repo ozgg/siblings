@@ -10,6 +10,15 @@
     <p><%= l(@date, format: '%A') %></p>
   </hgroup>
 
+  <nav class="adjacent">
+    <% if @adjacent[:prev].present? %>
+      <%= diary_entry_link(@adjacent[:prev], l(@adjacent[:prev]), class: 'prev') %>
+    <% end %>
+    <% if @adjacent[:next].present? %>
+      <%= diary_entry_link(@adjacent[:next], l(@adjacent[:next]), class: 'next') %>
+    <% end %>
+  </nav>
+
   <% @collection.each do |entity| %>
     <%= render partial: 'diary/entity', locals: { entity: } %>
   <% end %>

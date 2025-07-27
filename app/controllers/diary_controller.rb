@@ -11,7 +11,8 @@ class DiaryController < ApplicationController
 
   # get /diary/:date
   def show
-    @date = Date.parse(params[:date])
+    @date = Date.parse(params[:date].to_s)
+    @adjacent = DiaryService.adjacent_dates(@date)
     @collection = Post.where(date: @date).list
   end
 end

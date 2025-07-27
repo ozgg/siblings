@@ -4,9 +4,10 @@ module DiaryHelper
 
   # @param [Post|Date] entity
   # @param [String] text
-  def diary_entry_link(entity, text = entity.title_for_page)
+  # @param [Hash] options
+  def diary_entry_link(entity, text = entity.title_for_page, options = {})
     date = entity.is_a?(Post) ? entity.date : entity
-    link_to(text, diary_entry_path(date: date.strftime('%F')))
+    link_to(text, diary_entry_path(date: date.strftime('%F')), options)
   end
 
   # Entry title with sibling name and post title, if present
