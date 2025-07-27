@@ -1,11 +1,14 @@
 <% content_for :title, t('.title', date: params[:date]) %>
 <% content_for :breadcrumbs do %>
   <%= link_to(t('diary.index.nav_text'), diary_path) %>
-  <span><%= params[:date] %></span>
+  <span><%= l(@date) %></span>
 <% end %>
 
-<section>
-  <h1><%= t('.heading', date: params[:date]) %></h1>
+<section class="diary">
+  <hgroup>
+    <h1><%= t('.heading', date: l(@date)) %></h1>
+    <p><%= l(@date, format: '%A') %></p>
+  </hgroup>
 
   <% @collection.each do |entity| %>
     <%= render partial: 'diary/entity', locals: { entity: } %>

@@ -1,9 +1,6 @@
 <article class="post-preview">
   <hgroup>
-    <h3><%= diary_entry_link(entity, entity.sibling.name) %></h3>
-    <% unless entity.title.blank? %>
-      <h4><%= entity.title %></h4>
-    <% end %>
+    <h3><%= diary_entry_link(entity, diary_entry_title(entity)) %></h3>
   </hgroup>
 
   <figure>

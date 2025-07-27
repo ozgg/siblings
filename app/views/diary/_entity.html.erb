@@ -1,10 +1,6 @@
 <article class="post">
   <hgroup>
-    <h2><%= entity.sibling.name %></h2>
-    <% unless entity.title.blank? %>
-      <h3><%= entity.title %></h3>
-    <% end %>
-    <p><%= l(entity.date, format: '%A') %></p>
+    <h2><%= diary_entry_title(entity) %></h2>
   </hgroup>
 
   <% if entity.image.attached? %>

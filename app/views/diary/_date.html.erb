@@ -1,6 +1,6 @@
 <section class="diary">
   <hgroup>
-    <h2><%= l(date) %></h2>
+    <h2><%= diary_entry_link(date, l(date)) %></h2>
     <p><%= l(date, format: '%A') %></p>
   </hgroup>
   <% posts.each do |entity| %>

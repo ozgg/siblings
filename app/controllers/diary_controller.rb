@@ -11,6 +11,7 @@ class DiaryController < ApplicationController
 
   # get /diary/:date
   def show
-    @collection = Post.where(date: params[:date]).list
+    @date = Date.parse(params[:date])
+    @collection = Post.where(date: @date).list
   end
 end
