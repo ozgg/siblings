@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 module DiaryHelper
-
   # @param [Post|Date] entity
   # @param [String] text
   # @param [Hash] options
