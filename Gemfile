@@ -28,7 +28,7 @@ group :development, :test do
   gem 'database_cleaner', '~> 2.1'
   gem 'debug', platforms: %i[mri windows], require: 'debug/prelude'
   gem 'factory_bot_rails', '~> 6.4'
-  gem 'pry', '~> 0.15.2'
+  gem 'pry', '~> 0.16.0'
   gem 'pry-byebug', '~> 3.12'
   gem 'rspec-rails', '~> 8.0'
   gem 'rubocop', '~> 1.82'
