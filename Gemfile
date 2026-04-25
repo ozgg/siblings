@@ -2,7 +2,7 @@
 
 source 'https://rubygems.org'
 
-gem 'aws-sdk-s3', '~> 1.219'
+gem 'aws-sdk-s3', '~> 1.220'
 gem 'bcrypt', '~> 3.1.22'
 gem 'bootsnap', require: false
 gem 'image_processing', '~> 1.2'
